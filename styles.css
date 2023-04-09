@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+#container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.main-heading{
+  background: #f4ff4e87;
+  border-radius: 0.1em;
+  color: #0b0c0ae0;
+  font-size: 2.3em;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  border: 1.5px dotted #31500fad;}
+
+
+ul {
+  list-style-type: none;
+  margin: 10px 10px;
+  padding: 12px;
+  background: #f4ff4e87;
+  flex: auto;
+  border-radius: 0.5em;
+}
+ul li {
+  padding: 10px;
+  /* padding-left: 0; */
+  display: flex;
+  justify-content: space-between;
+  align-items: inherit;
+  align-items: center;
+  border-bottom: 0.5px solid;
+  margin-bottom: 17px;
+}
+ul li:hover {
+  background: #f3f3f3;
+}
+#list input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+#list label {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.4em;
+}
+
+#list label:before {
+  content:'';
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #0079bf;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#list input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #FFC107;
+  border-width: 0 2px 2px 0;
+  transform: rotate(27deg);
+}
+
+#list input:checked + label:before {
+  background: #131516d1;
+}
+#list input:checked + label {
+  font-size: 1em;
+  color: dimgray;
+}
+
+.delete {
+    height: 28px;
+    padding: 4px;
+    scale: 2.5;
+    margin: 0 4px;
+    border-radius: 0.3em;
+}
+.delete:hover {
+  background: #295375;
+  cursor: pointer;
+}
+h1 {
+  text-align: center;
+}
+.add-task {
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  padding: 11px;
+  border: 0.5px solid #8b8585;
+  border-radius: 0.3em;
+  margin-bottom: 5px;
+  font-size: x-large;
+  text-align: center;
+}
+
+#add-task-button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#add-task-button img{
+  width: 33px;
+  margin-top: 5px;
+  
+}
+
+.tasks-list-tab{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  margin: 22px 0;
+}
+.tasks-list-tab a{
+  padding: 11px;
+  margin-bottom: 20px;
+  font-size: large;
+  margin-left: 2px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  flex: auto;
+}
+.tasks-list-tab a[data-Selected]{
+  box-shadow: 0 0 2px 1px #429bbd;
+    background: #32251d;
+    color: #cbcd32;
+}
+
+/* .tasks-list-tab a#all-tasks {
+ 
+  color:white;
+  background-color: rgb(67, 95, 128);
+}
+
+.tasks-list-tab a#uncompleted-tasks {
+    background-color: rgb(182, 84, 38);
+    color: white;
+}
+
+.tasks-list-tab a#completed-tasks {
+    background-color: rgb(13, 133, 93);
+    color: white;
+} */
+
+
+
+
+
+/* notification animation style */
+.notification-success{
+  animation: notification-animation 4s ;
+  
+  
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 5px;
+  z-index: 1;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 154px;
+  height: fit-content;
+  border-radius: 0.3em;
+  background-color: rgb(64, 168, 64);
+  color:white;
+}
+.notification-error{
+
+  animation: notification-animation 4s ;
+  
+  
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 5px;
+  z-index: 1;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 154px;
+  height: fit-content;
+  border-radius: 0.3em;
+  background-color: rgb(202, 1, 1);
+  color: white;
+  box-shadow: 0 0 3px 1.5px #524141;
+}
+@keyframes notification-animation {
+  0%{
+    transform: translate(0px,0px);
+  }
+  10%{
+    transform: translate(150px,0);
+  }
+  90%{
+    transform: translate(150px,0);
+  }
+  100%{
+    transform: translate(-150px,0);
+  }
+}
