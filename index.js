@@ -1,0 +1,27 @@
+require('dotenv').config()
+const express=require('express')
+
+const app=express()
+
+
+app.use(express.static('./assets'))
+app.set('view engine','ejs')
+app.set('views','./views')
+
+
+
+//parse req urlencoded data and json  
+
+app.use(express.urlencoded({extended:false}))
+app.use(express.json({limit:'1mb'}))
+
+
+
+app.get('/',(req,res)=>{
+   return res.render('index')
+})
+
+app.listen(process.env.EXPRESS_SERVER_PORT_NO,(err)=>{
+    if(err){return console.log(`Error:${err}`)}
+    console.log(`EXPRESS Server running successfully on port${process.env.EXPRESS_SERVER_PORT_NO}`)
+})
