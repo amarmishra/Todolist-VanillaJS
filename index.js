@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express=require('express')
-
+const PORT=process.env.EXPRESS_SERVER_PORT_NO | 8000
 const app=express()
 
 
@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
    return res.render('index')
 })
 
-app.listen(process.env.EXPRESS_SERVER_PORT_NO,(err)=>{
+app.listen(PORT,(err)=>{
     if(err){return console.log(`Error:${err}`)}
     console.log(`EXPRESS Server running successfully on port${process.env.EXPRESS_SERVER_PORT_NO}`)
 })
