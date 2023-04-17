@@ -2,6 +2,11 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+body{
+  margin :0;
+  padding: 0;
+  
+}
 #container {
     margin: 0 auto;
     display: flex;
@@ -9,14 +14,17 @@
     flex-wrap: wrap;
 }
 .main-heading{
-  background: #f4ff4e87;
-  border-radius: 0.1em;
-  color: #0b0c0ae0;
-  font-size: 2.3em;
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-  border: 1.5px dotted #31500fad;}
+    background: #f4ff4e87;
+    border-radius: 0.1em;
+    color: #0b0c0ae0;
+    font-size: 2.3em;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    border: 1px dotted #31500fad;
+    width: -webkit-fill-available;
+    border-left: none;
+}
 
 
 ul {
@@ -52,7 +60,7 @@ ul li:hover {
 #list label {
   position: relative;
   cursor: pointer;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 #list label:before {
@@ -222,3 +230,35 @@ h1 {
     transform: translate(-150px,0);
   }
 }
+
+
+/* media query */
+@media screen and (max-width:576px) {
+  body{
+    font-size:1.2em;
+  }
+  .tasks-list-tab a {
+    font-size: inherit;
+  }
+  .add-task{
+    font-size: inherit;
+  }
+  #add-task-button img {
+    width: 46px;
+  }
+  .delete {
+    width: 36px;
+    height: 35px;
+  }
+  #list input:checked + label {
+    font-size: 1.15em;
+  }
+  #list label:before {
+    width: 0.8em;
+    height: 0.8em;
+  }
+  #list input:checked + label:after {
+    width: 14px;
+    height: 26px;  
+  }
+} 

@@ -4,16 +4,18 @@
     <title>Todo</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
   <body>
     <h1 class="main-heading">Todo List App</h1>
     <div id="container">
       <div style="    display: flex;
       flex-flow: column wrap;
-      height: fit-content;">
+      height: fit-content;width: -webkit-fill-available;
+    margin: 0 5px;">
         
         <div id="filter-task-tab" class="tasks-list-tab">
-          <a id="all-tasks">ALL TASKS <span id="all-tasks-counter">0</span></a>
+          <a id="all-tasks">ALL<span id="all-tasks-counter">0</span></a>
           <a id="uncompleted-tasks">REMAINING <span id="uncompleted-tasks-counter">0</span></a>
           <a id="completed-tasks">FINISHED <span id="completed-tasks-counter">0</span></a>
         </div>

@@ -1,6 +1,7 @@
 let tasks = [];
 const taskList = document.getElementById('list');
 const addTaskInput = document.getElementById('add');
+const addTaskButton = document.getElementById('add-task-button');
 const alltasksCounter = document.getElementById('all-tasks-counter');
 const completedtasksCounter = document.getElementById('completed-tasks-counter');
 const uncompletedtasksCounter = document.getElementById('uncompleted-tasks-counter');
@@ -315,13 +316,11 @@ function showNotification(text,{appearance}) {
 
 
 
-const handleKeyPress=(e)=>{
-		const text=e.target.value;
+const handleAddTaskClick=(e)=>{
+		const text=addTaskInput.value;
 
-		//console.log(text);
-		if(e.key==="Enter" || e.which==='13'){
+		
 			
-
 			if(!text){
 				showNotification("Task title cannot be empty!!  Add something",{appearance:'error'})
 			}
@@ -336,7 +335,7 @@ const handleKeyPress=(e)=>{
 				}
 				
 			}
-		}
+			
 }
 
 
@@ -388,7 +387,7 @@ fetchList();
 
 //create Task when user presses Enter
 
-addTaskInput.addEventListener('keydown',handleKeyPress);
+addTaskButton.addEventListener('click',handleAddTaskClick);
 
 taskList.addEventListener('click',taskTrigger)
 
